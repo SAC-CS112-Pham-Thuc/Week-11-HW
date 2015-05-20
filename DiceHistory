@@ -1,0 +1,29 @@
+public class DiceHistory {
+	Dice[] m_Dices = new Dice[100];
+	int m_GameCount;
+	
+	public DiceHistory()
+	{
+		m_GameCount = 0;
+	}
+	
+	public void AddDice (Dice gameDice)
+	{
+	    m_Dices[m_GameCount]=gameDice;
+		m_GameCount++;
+	}
+
+	public String GameHistory()
+	{
+		String result="";
+		int i=1;
+		for (i=0;i<m_GameCount;i++) {
+			Dice d = m_Dices[i];
+			result = result + "Roll #" + (i+1)  + "  DiceValue = " + d.getDiceValue() + "\n";
+		}
+		result = result + "Total Games = " + i  + "\r\n";
+		
+		return result;
+	}
+	
+}
