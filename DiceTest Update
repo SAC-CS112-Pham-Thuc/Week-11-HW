@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class DiceTest {
+
+	public static void main(String[] args) {
+		
+		DiceHistory GameHist = new DiceHistory();
+		
+		Scanner read = new Scanner(System.in);
+		String input;
+		int count = 1;
+		do
+		{
+			Dice myDice = new Dice();
+			System.out.println("Round: " + count ++);
+			myDice.rollDice();
+			GameHist.AddDice(myDice);
+		
+			System.out.println("Play Again?: ");
+			 input = read.nextLine();
+		} while (input.equalsIgnoreCase("Y"));
+		
+		read.close();
+		
+		System.out.println(GameHist.GameHistory());
+		
+		
+	}
+
+}
