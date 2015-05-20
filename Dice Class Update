@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+
+public class Dice 
+{
+	private int diceValue;
+
+	public void Throw()
+	{
+		diceValue = (1 + (int)( Math.random()* 6));
+		
+	}
+	
+	public int getDiceValue()
+	{
+		return diceValue;
+	}
+	
+	public void rollDice()
+	{
+		Throw();
+		System.out.println("The dice value of this round is: " + getDiceValue());
+	}
+	
+}
+
+
